@@ -1,0 +1,110 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-std=c++14",
+      "-fPIC",
+      "-I./include",
+      "-I./include/imgui",
+      "-I/usr/include/SDL2",
+      "-m32",
+      "-c",
+      "-o",
+      "src/runtime-x86/init.o",
+      "src/runtime-x86/init.cpp"
+    ],
+    "directory": "/home/bob/Coding/cheats/mystuff/upimgui",
+    "file": "/home/bob/Coding/cheats/mystuff/upimgui/src/runtime-x86/init.cpp",
+    "output": "/home/bob/Coding/cheats/mystuff/upimgui/src/runtime-x86/init.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-std=c++14",
+      "-fPIC",
+      "-I./include",
+      "-I./include/imgui",
+      "-I/usr/include/SDL2",
+      "-m32",
+      "-c",
+      "-o",
+      "include/imgui/imgui.o",
+      "include/imgui/imgui.cpp"
+    ],
+    "directory": "/home/bob/Coding/cheats/mystuff/upimgui",
+    "file": "/home/bob/Coding/cheats/mystuff/upimgui/include/imgui/imgui.cpp",
+    "output": "/home/bob/Coding/cheats/mystuff/upimgui/include/imgui/imgui.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-std=c++14",
+      "-fPIC",
+      "-I./include",
+      "-I./include/imgui",
+      "-I/usr/include/SDL2",
+      "-m32",
+      "-c",
+      "-o",
+      "include/imgui/imgui_impl_sdl.o",
+      "include/imgui/imgui_impl_sdl.cpp"
+    ],
+    "directory": "/home/bob/Coding/cheats/mystuff/upimgui",
+    "file": "/home/bob/Coding/cheats/mystuff/upimgui/include/imgui/imgui_impl_sdl.cpp",
+    "output": "/home/bob/Coding/cheats/mystuff/upimgui/include/imgui/imgui_impl_sdl.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-std=c++14",
+      "-fPIC",
+      "-I./include",
+      "-I./include/imgui",
+      "-I/usr/include/SDL2",
+      "-m32",
+      "-c",
+      "-o",
+      "include/imgui/imgui_demo.o",
+      "include/imgui/imgui_demo.cpp"
+    ],
+    "directory": "/home/bob/Coding/cheats/mystuff/upimgui",
+    "file": "/home/bob/Coding/cheats/mystuff/upimgui/include/imgui/imgui_demo.cpp",
+    "output": "/home/bob/Coding/cheats/mystuff/upimgui/include/imgui/imgui_demo.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-std=c++14",
+      "-fPIC",
+      "-I./include",
+      "-I./include/imgui",
+      "-I/usr/include/SDL2",
+      "-m32",
+      "-c",
+      "-o",
+      "include/imgui/main.o",
+      "include/imgui/main.cpp"
+    ],
+    "directory": "/home/bob/Coding/cheats/mystuff/upimgui",
+    "file": "/home/bob/Coding/cheats/mystuff/upimgui/include/imgui/main.cpp",
+    "output": "/home/bob/Coding/cheats/mystuff/upimgui/include/imgui/main.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-std=c++14",
+      "-fPIC",
+      "-I./include",
+      "-I./include/imgui",
+      "-I/usr/include/SDL2",
+      "-m32",
+      "-c",
+      "-o",
+      "include/imgui/imgui_draw.o",
+      "include/imgui/imgui_draw.cpp"
+    ],
+    "directory": "/home/bob/Coding/cheats/mystuff/upimgui",
+    "file": "/home/bob/Coding/cheats/mystuff/upimgui/include/imgui/imgui_draw.cpp",
+    "output": "/home/bob/Coding/cheats/mystuff/upimgui/include/imgui/imgui_draw.o"
+  }
+]
