@@ -6,7 +6,10 @@ SOURCES=$(shell find include/ -type f -iname '*.cpp')
 OBJECTS=$(SOURCES:.cpp=.o)
 
 TYPE = src/runtime-x86
+TYPE2 = src/testing
+
 OUT := libsdl-imgui.so
+OUT2 := testing.exe
 
 
 x86: 32bit_flags build
@@ -23,5 +26,7 @@ clean:
 %.o: %.cpp
 	$(CXX) -c $(CXXFLAGS) -o "$@" "$<"
 
-build: $(OBJECTS) $(TYPE)/init.o
+build: $(OBJECTS) $(TYPE)/init.o $(TYPE2)/testing.o
 	$(CXX) $(CXXFLAGS) $(OBJECTS) $(TYPE)/init.o -o $(OUT) $(LDFLAGS)
+	$(CXX) $(CXXFLAGS) $(OBJECTS) $(TYPE2)/testing.o -o $(OUT2) -ldl -lSDL2 -lGL
+

@@ -28,6 +28,10 @@ void hkSwapWindow(SDL_Window* window) {
 		// Create a new context for our rendering.
 		user_context = SDL_GL_CreateContext(window);
         ImGui::CreateContext();
+        ImGuiIO& io = ImGui::GetIO(); (void)io;
+        io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;     // Enable Keyboard Controls
+        io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;      // Enable Gamepad Controls
+        io.WantCaptureMouse = true;
 
         ImGui_ImplSDL2_InitForOpenGL(window, user_context);
         ImGui_ImplOpenGL2_Init();
@@ -36,12 +40,49 @@ void hkSwapWindow(SDL_Window* window) {
 	// Switch to our context.
 	SDL_GL_MakeCurrent(window, user_context);
 
+    SDL_Event event;
+    while (SDL_PollEvent(&event)) {
+        ImGui_ImplSDL2_ProcessEvent(&event);
+    }
+
 	// Perform UI rendering.
     ImGui_ImplOpenGL2_NewFrame();
 	ImGui_ImplSDL2_NewFrame(window);
     ImGui::NewFrame();
 
 	ImGui::ShowDemoWindow();
+
+    bool my_tool_active = true;
+    ImGui::Begin("My First Tool", &my_tool_active, ImGuiWindowFlags_MenuBar);
+    if (ImGui::BeginMenuBar())
+    {
+        if (ImGui::BeginMenu("File"))
+        {
+            if (ImGui::MenuItem("Open..", "Ctrl+O")) { /* Do stuff */ }
+            if (ImGui::MenuItem("Save", "Ctrl+S"))   { /* Do stuff */ }
+            if (ImGui::MenuItem("Close", "Ctrl+W"))  { my_tool_active = false; }
+            ImGui::EndMenu();
+        }
+        ImGui::EndMenuBar();
+    }
+
+    float my_color = 0;
+    // Edit a color stored as 4 floats
+    ImGui::ColorEdit4("Color", &my_color);
+
+    // Generate samples and plot them
+    float samples[100];
+    for (int n = 0; n < 100; n++)
+        samples[n] = sinf(n * 0.2f + ImGui::GetTime() * 1.5f);
+    ImGui::PlotLines("Samples", samples, 100);
+
+    // Display contents in a scrolling region
+    ImGui::TextColored(ImVec4(1,1,0,1), "Important Stuff");
+    ImGui::BeginChild("Scrolling");
+    for (int n = 0; n < 50; n++)
+        ImGui::Text("%04d: Some text", n);
+    ImGui::EndChild();
+    ImGui::End();
 
 	ImGui::Render();
     ImGui_ImplOpenGL2_RenderDrawData(ImGui::GetDrawData());
