@@ -3,7 +3,7 @@
 
 ## Summary
 The code provided is heavily inspired by the work done by aixxe in [https://aixxe.net/2016/12/imgui-linux-csgo](https://aixxe.net/2016/12/imgui-linux-csgo).
-They used ImGui v1.5; this one is updated for v1.62. Many functions were reworked in v1.61, and this **should** work until the most recent version v1.89.9 although untested.
+They used ImGui v1.5; this one is updated for v1.62. Many functions were reworked in v1.61, and this works until the most recent version **v1.89.9**.
 If you are using the default imgui files provided in ```include/imgui``` and you are unable to display the DemoWindow on screen, the offsets have likely changed.
 Open up ```libSDL2-2.0.so.0``` and string search for ```The specified window has not been made current``` (for context, ripgrep the SDL2 source code for ```SDL_GL_SwapWindowWithResult```).
 

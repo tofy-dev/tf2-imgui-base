@@ -4,7 +4,7 @@
 #include <cstdint>
 
 #include "imgui/imgui.h"
-#include "imgui/imgui_impl_sdl.h"
+#include "imgui/imgui_impl_sdl2.h"
 #include "imgui/imgui_impl_opengl2.h"
 
 // Pointer to 'SDL_GL_SwapWindow' in the jump table.
